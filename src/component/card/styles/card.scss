@@ -1,0 +1,134 @@
+$darkCyan: hsl(185, 75%, 39%);
+$veryDarkDesaturatedBlue: hsl(229, 23%, 23%);
+$darkGrayishBlue: hsl(227, 10%, 46%);
+$darkGray: hsl(0, 0%, 59%);
+
+html {
+    background-image: url('/public/images/bg-pattern-top.svg'), url('/public/images/bg-pattern-bottom.svg');
+    background-position: -50px -250px, 500px 350px;
+    background-size: 45%, 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-color: $darkCyan;
+}
+
+main {
+    font-size: 18px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+    width: 85%;
+    font-family: "Kumbh Sans", sans-serif;
+    border-radius: 15px;
+
+    &-header {
+        height: 150px;
+        width: 100%;
+        background: url("/public/images/bg-pattern-card.svg") center / cover no-repeat;
+        border-radius: 15px 15px 0 0;
+    }
+
+    &-avatar {
+        position: absolute;
+        height: 120px;
+        width: 120px;
+        top: 190px;
+        background: url("/public/images/image-victor.jpg") center / cover no-repeat;
+        border: 5px solid white;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 70px;
+        width: 100%;
+        background-color: white;
+        border-radius: 0 0 15px 15px;
+
+        &__default {
+            width: 80%;
+            text-align: center;
+
+            section {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                width: 58%;
+                margin: 10px auto;
+
+                h3 {
+                    font-weight: 700;
+                }
+
+                p {
+                    color: $darkGrayishBlue;
+                }
+            }
+
+            span {
+                p {
+                    color: $darkGrayishBlue;
+                }
+            }
+        }
+
+        .line-break {
+            height: 1px;
+            width: 100%;
+            background-color: $darkGray;
+            margin-top: 40px;
+        }
+
+        &__expand {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px auto;
+            width: 70%;
+            text-align: center;
+
+            div {
+                .number {
+                    font-size: inherit;
+                    font-weight: 700;
+                    color: $veryDarkDesaturatedBlue;
+                }
+
+                p {
+                    font-size: 13px;
+                    letter-spacing: 1px;
+                    color: $darkGrayishBlue;
+                }
+            }
+        }
+    }
+}
+
+.attribution {
+    display: flex;
+    justify-content: space-between;
+    margin: -50px auto;
+    width: 85%;
+}
+
+@media only screen and (min-width: 1200px) {
+    .card {
+        width: 30%;
+
+        &-info {
+            &__default {
+                width: 58%;
+            }
+        }
+    }
+
+    .attribution {
+        width: 30%;
+    }
+}
